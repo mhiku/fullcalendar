@@ -254,7 +254,12 @@ var viewMethods = {
 				function(ev) {
 					view.trigger('eventMouseout', this, event, ev);
 				}
-			);
+			).mouseup( function(ev) {
+				if( ev.button == 2 ) {
+					//mhiku@github added eventRightclick
+					view.trigger('eventRightclick', this, event, ev);
+				}
+			});
 	},
 	
 	
